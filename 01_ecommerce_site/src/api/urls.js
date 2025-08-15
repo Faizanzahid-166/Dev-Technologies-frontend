@@ -6,7 +6,7 @@ const PROXY = '/api'; // thanks to proxy, no localhost:5000 here
 
 
 const BASE_URL = axios.create({
-   baseURL:  "https://dev-technologies-backend.onrender.com/api", // backend URL
+   baseURL:  "http://localhost:5000/api", // backend URL
  });
 
 // Product APIs
