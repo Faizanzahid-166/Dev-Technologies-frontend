@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
      '/api': {
-        target: 'http://localhost:5000', // Your backend
+        target: 'https://dev-technologies-frontend.vercel.app', // Your backend
         changeOrigin: true,
         secure: false,
       },
