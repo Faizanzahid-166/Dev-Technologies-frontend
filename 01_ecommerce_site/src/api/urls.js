@@ -6,7 +6,7 @@ const PROXY = '/api'; // thanks to proxy, no localhost:5000 here
 
 
 const BASE_URL = axios.create({
-   baseURL:   "https://dev-technologies-frontend.vercel.app/api", // backend URL
+   baseURL:  "https://dev-technologies-backend-1.onrender.com/api", // ✅ backend URL
  });
 
 // Product APIs
