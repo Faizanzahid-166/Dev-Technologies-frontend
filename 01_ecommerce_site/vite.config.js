@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
      '/api': {
-        target: "https://dev-technologies-backend-1.onrender.com", // ✅ backend URL
+        target: "https://dev-technologies-backend.onrender.com", // ✅ backend URL
         changeOrigin: true,
         secure: false,
       },
