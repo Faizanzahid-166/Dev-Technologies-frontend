@@ -1,5 +1,6 @@
-import axios from "axios";
 
+import axios from "axios";
+import importenv from './importenv.js'
 //const BASE_URL = "http://localhost:5000/api";
 
 //const PROXY = '/api'; // thanks to proxy, no localhost:5000 here
@@ -12,11 +13,21 @@ import axios from "axios";
 // api.js
 
 
+// export const BASE_URL = axios.create({
+//   baseURL:   importenv.backendURL || importenv.nodeURL ,
+//   withCredentials: true
+// });
+
+
+
+const isProd = import.meta.env.PROD;
+
 export const BASE_URL = axios.create({
-  baseURL:   import.meta.env.VITE_API_URL || "http://localhost:5000/api" ,
+  baseURL: isProd ? importenv.nodeURL : importenv.backendURL,
   withCredentials: true
 });
 
+console.log("check",BASE_URL.defaults.baseURL);
 
 // Product APIs
 export const getAllProducts = (params) =>
