@@ -13,7 +13,7 @@ import axios from "axios";
 
 
 export const BASE_URL = axios.create({
-  baseURL:   import.meta.env.VITE_API_URL,
+  baseURL:   import.meta.env.VITE_API_URL || "http://localhost:5000/api" ,
   withCredentials: true
 });
 
@@ -88,8 +88,8 @@ export const getBannerById = (id) => {
 export const registerUser = (userData) =>
   BASE_URL.post("/auth/register", userData).then((res) => res.data);
 
-export const loginUser = (data) =>
-  BASE_URL.post("/auth/login", data).then(res => res.data);
+export const loginUser = (credentials) =>
+  BASE_URL.post("/auth/login", credentials).then((res) => res.data);
 
 export const logoutUser = () =>
   BASE_URL.post("/auth/logout").then((res) => res.data);
@@ -108,8 +108,9 @@ export const addToCart = (productId, quantity, token) =>
     { headers: { Authorization: `Bearer ${token}` } }
   );
 
-export const getCart = () =>
-  BASE_URL.get("/cart").then(res => res.data);
+export const getCart = (token) =>
+  BASE_URL.get("/cart", { headers: { Authorization: `Bearer ${token}` } });
+
 // urls.js
 // export const updateCartItem = (productId, quantity, token) =>
 //   axios.put(
