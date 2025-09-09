@@ -10,7 +10,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import realtimEnv from './api/realtimeEnv.js'
 
-const stripePromise = loadStripe(realtimEnv.STRIPEUrl); // replace with your Stripe public key
+const stripePromise = loadStripe(realtimEnv.STRIPE_PUBLIC_KEY); // replace with your Stripe public key
 
 
 import routers from './App.jsx'

@@ -10,7 +10,7 @@ import {
 import { deposit, withdraw, transfer } from "../../api/realpaymentApi.js";
 import realtimEnv from '../../api/realtimeEnv.js'
 
-const stripePromise = loadStripe(realtimEnv.STRIPEUrl);
+const stripePromise = loadStripe(realtimEnv.STRIPE_PUBLIC_KEY);
 
 const PaymentForm = () => {
   const [amount, setAmount] = useState("");
