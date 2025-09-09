@@ -1,6 +1,8 @@
 import {Applayout} from './layouts/01_index.js'
 import {HomePage, ProductdetailsPage,  CartPage, ProductListPage, NotFoundPage, ProductsPage, HotofferePage, BannerdetailsPage, Signup, Login} from './pages/02_index.js'
+
 import { About, Blogs, Comingsoon, Contact, WorkingOnIt, MoneyRefundComingSoon, CategoriesWorkingOn, Services ,AdminPanel} from "./info-pages/infopages.js";
+
 import {createBrowserRouter,} from 'react-router'
 import ProtectedRoute from './components/11_ProtectedRoute.jsx';
 
